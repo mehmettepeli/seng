@@ -1,21 +1,23 @@
+<form class="form-signin" method="post" action="/activities">
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Başlık:</strong>
   <%= @activity.title %>
 </p>
 
 <p>
-  <strong>Adate:</strong>
+  <strong>Tarih:</strong>
   <%= @activity.adate %>
 </p>
 <% if logged_in? %>
 
 <% end %>
 <p>
-  <strong>Content:</strong>
+  <strong>İçerik:</strong>
   <%= @activity.content %>
 </p>
 
-<%= link_to 'Edit', edit_activity_path(@activity) %> |
-<%= link_to 'Back', activities_path %>
+<%= link_to 'Düzenle', edit_activity_path(@activity) %> | &nbsp;
+<%= link_to 'Geri', activities_path %>
+</form>

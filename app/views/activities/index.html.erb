@@ -1,31 +1,118 @@
-<h1>Listing activities</h1>
+<div class="container" style="box-shadow: 0px 0px 5px #dddddd; background-color: #ffffff; padding-top: 5px; padding-bottom: 5px; border-top:3px solid #cccccc; border-bottom:2px dotted #efefef;">
+  <header>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="logo">
+          <a href="/">
+            <img src="http://www.caglarergul.com/ruby/logo.png" width="130px">
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="search">
+          <form>
+            <input type="search" style="float: left; width: 270px; margin-right: 5px;" class="form-control" placeholder="Aranacak Kelimeyi Girin">
+            <input type="submit" style="float:left;" class="btn btn-default" value="Ara">
+          </form>
+        </div>
+        <div class="social-media">
+          <a href="https://www.facebook.com/gedizbilgisayarkulubu"><img src="http://www.caglarergul.com/ruby/facebook.png" width="32" height="32"></a>
+          <a href="https://twitter.com/gedizBytk"><img src="http://www.caglarergul.com/ruby/twitter.png" width="32" height="32"></a>
+        </div>
+        <div class="login-register" style="text-align: right; padding-right: 13px;">
+          <a href="http://localhost:3000/login" class="btn btn-primary">Giriş Yap</a>
+          <a href="http://localhost:3000/register" class="btn btn-success">Kayıt Ol</a>
+        </div>
+      </div>
+    </div>
+    <br>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Adate</th>
-      <th>Content</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="http://localhost:3000/">Anasayfa</a></li>
+            <li><a href="#">Etkinliklerimiz</a></li>
+            <li><a href="http://localhost:3000/gallery">Galeri</a></li>
+            <li><a href="http://localhost:3000/carriers">Kariyer</a></li>
+            <li><a href="http://localhost:3000/blog">Blog</a></li>
+            <li><a href="http://localhost:3000/contact">İletişim</a></li>
+            <li><a href="http://localhost:3000/presses">Basında Gediz</a></li>
+          </ul>
 
-  <tbody>
-    <% @activities.each do |activity| %>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+  </header>
+  <br>
+  <div style="width:900px" class="container">
+    <h1>Etkinlikleri Listele</h1>
+
+    <table class="table table-hover">
+      <thead>
       <tr>
-        <td><%= activity.title %></td>
-        <td><%= activity.adate %></td>
-        <td><%= activity.content %></td>
-        <td><%= link_to 'Show', activity %></td>
-        <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
-        <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Başlık</th>
+        <th>Tarih</th>
+        <th>İçerik</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
 
-<br>
+      <tbody>
+      <% @activities.each do |activity| %>
+          <tr>
+            <td><%= activity.title %></td>
+            <td><%= activity.adate %></td>
+            <td><%= activity.content %></td>
+            <td><%= link_to 'Göster', activity %></td>
+            <td><%= link_to 'Düzenle', edit_activity_path(activity) %></td>
+            <td><%= link_to 'Sil', activity, method: :delete, data: { confirm: 'Silmek istediğinize emin misiniz?' } %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
 
-<%= link_to 'New Activity', new_activity_path %>
+    <br>
+
+    <%= link_to 'Yeni Etkinlik', new_activity_path %>  &nbsp;
+    <%= link_to 'Kariyer Fırsatlarını Göster', carriers_path %> &nbsp;
+    <%= link_to 'Basında Gediz Üniversitesi', presses_path %> &nbsp;
+        </div>
+
+        <footer>
+
+        </footer>
+        </div>
+
+
+
+        <script>
+            $( document ).ready(function() {
+                $("input[type=text]").addClass("form-control");
+                $("input[type=password]").addClass("form-control");
+                $("input[type=submit]").addClass("btn btn-success");
+            });
+        </script>
+        <script type="text/javascript " src="../javascripts/bootstrap.js"></script>
+
+
+
+
+
+
+
+
+

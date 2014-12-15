@@ -1,20 +1,93 @@
-<h1>Login</h1>
+<div class="container" style="box-shadow: 0px 0px 5px #dddddd; background-color: #ffffff; padding-top: 5px; padding-bottom: 5px; border-top:3px solid #cccccc; border-bottom:2px dotted #efefef;">
+  <header>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="logo">
+          <a href="/">
+            <img src="http://www.caglarergul.com/ruby/logo.png" width="130px">
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="search">
+          <form>
+            <input type="search" style="float: left; width: 270px; margin-right: 5px;" class="form-control" placeholder="Aranacak Kelimeyi Girin">
+            <input type="submit" style="float:left;" class="btn btn-default" value="Ara">
+          </form>
+        </div>
+        <div class="social-media">
+          <a href="https://www.facebook.com/gedizbilgisayarkulubu"><img src="http://www.caglarergul.com/ruby/facebook.png" width="32" height="32"></a>
+          <a href="https://twitter.com/gedizBytk"><img src="http://www.caglarergul.com/ruby/twitter.png" width="32" height="32"></a>
+        </div>
+        <div class="login-register" style="text-align: right; padding-right: 13px;">
+          <a href="http://localhost:3000/login" class="btn btn-primary">Giriş Yap</a>
+          <a href="http://localhost:3000/register" class="btn btn-success">Kayıt Ol</a>
+        </div>
+      </div>
+    </div>
+    <br>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
 
-<%= form_tag author_sessions_path, method: :post do %>
-    <div class="field">
-      <%= label_tag :email %> &nbsp;&nbsp;&nbsp;&nbsp;
-      <%= text_field_tag :email %>
-      <br/>
-    </div>
-    <div class="field">
-      <%= label_tag :password %>
-      <%= password_field_tag :password %>
-      <br/>
-    </div>
-    <div class="actions">
-      <%= submit_tag "Login" %>
-    </div>
-<% end %>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Anasayfa</a></li>
+            <li><a href="#">Etkinliklerimiz</a></li>
+            <li><a href="#">Galeri</a></li>
+            <li><a href="#">Kariyer</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">İletişim</a></li>
+          </ul>
 
-<%= link_to 'Back', activities_path %>
-<%= link_to 'Register Now',  register_path %>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+  </header>
+  <br>
+  <div class="container" style="width:500px">
+
+    <h2>Giriş Yap</h2>
+    <%= form_tag author_sessions_path, method: :post do %>
+        <div class="form-group">
+          <%= label_tag :EPosta %> &nbsp;&nbsp;&nbsp;&nbsp;
+          <%= text_field_tag :email %>
+          <br/>
+        </div>
+        <div class="form-group">
+          <%= label_tag :Şifre %>
+          <%= password_field_tag :password %>
+          <br/>
+        </div>
+        <div class="form-group">
+          <%= submit_tag "Giriş Yap" %>
+        </div>
+    <% end %>
+
+    <%= link_to 'Giriş Yap', activities_path %>  &nbsp;
+    <%= link_to 'Hemen Kaydol',  register_path %>
+
+  </div>
+
+  <footer>
+
+  </footer>
+</div>
+<script>
+    $( document ).ready(function() {
+        $("input[type=text]").addClass("form-control");
+        $("input[type=password]").addClass("form-control");
+        $("input[type=submit]").addClass("btn btn-success");
+    });
+</script>
+<script type="text/javascript " src="../javascripts/bootstrap.js"></script>

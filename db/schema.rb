@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203100643) do
+ActiveRecord::Schema.define(version: 20141210185538) do
 
   create_table "activities", force: true do |t|
     t.string   "title"
@@ -31,5 +31,21 @@ ActiveRecord::Schema.define(version: 20141203100643) do
   end
 
   add_index "authors", ["email"], name: "index_authors_on_email", unique: true
+
+  create_table "carriers", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "annocument_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "presses", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "pressdate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

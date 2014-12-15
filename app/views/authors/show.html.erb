@@ -1,16 +1,18 @@
+<form class="form-signin" method="post"  action="/authors" >
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Username:</strong>
+  <strong>Kullanıcı Adı:</strong>
   <%= @author.username %>
 </p>
 
 <p>
-  <strong>Email:</strong>
+  <strong>E Posta:</strong>
   <%= @author.email %>
 </p>
 
 
 
-<%= link_to 'Edit', edit_author_path(@author) %> |
-<%= link_to 'Back', authors_path %>
+<%= link_to 'Düzenle', edit_author_path(@author) %> |
+<%= link_to 'Geri', authors_path %>
+</form>

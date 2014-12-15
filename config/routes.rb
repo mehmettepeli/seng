@@ -3,12 +3,25 @@ Project2::Application.routes.draw  do
 
 resources :authors
   resources :activities
-
+resources   :carriers
 resources :author_sessions, only: [ :new, :create, :destroy ]
+resources :presses
+#resource :static_pages
 
 get 'login'  => 'author_sessions#new'
 get 'logout' => 'author_sessions#destroy'
   get 'register' => 'authors#new'
+
+#get "static_pages/home"
+#match '/', to: 'static_pages#home', via: 'get'
+  root  'static_pages#home'
+#get "static_pages/gallery"
+  match '/gallery', to: 'static_pages#gallery', via: 'get'
+#get "static_pages/blog"
+  match '/blog', to: 'static_pages#blog', via: 'get'
+#get "static_pages/contact"
+  match '/contact', to: 'static_pages#contact', via: 'get'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
