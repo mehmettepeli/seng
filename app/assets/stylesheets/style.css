@@ -1,0 +1,17 @@
+.social-media {
+    display: block;
+    float: right;
+    margin-top: 8px;
+    padding-right: 13px;
+    padding-top: 14px;
+    text-align: right;
+    width: 360px;
+}
+
+.login-register {
+    display: block;
+    float: right;
+    padding-right: 13px;
+    padding-top: 10px;
+    text-align: right;
+}
