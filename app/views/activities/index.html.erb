@@ -87,6 +87,8 @@
       <tbody>
       <% @activities.each do |activity| %>
           <tr>
+            <td><%= link_to image_tag(activity.image) %></td>
+
             <td><%= activity.title %></td>
             <td><%= activity.adate %></td>
             <td><%= activity.content %></td>

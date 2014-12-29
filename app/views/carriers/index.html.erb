@@ -82,6 +82,7 @@
       <tbody>
       <% @carriers.each do |carrier| %>
           <tr>
+            <td><%= link_to image_tag(carrier.image) %></td>
             <td><%= carrier.title %></td>
             <td><%= carrier.content %></td>
             <td><%= carrier.annocument_date %></td>
