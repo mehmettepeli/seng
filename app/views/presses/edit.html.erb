@@ -1,6 +1,35 @@
-<h1>Editing press</h1>
 
-<%= render 'form' %>
+<%  if current_user.role != "admin" %>
+    <meta http-equiv="refresh" content="0;URL='/login'" />
+<% else %>
 
-<%= link_to 'Show', @press %> |
-<%= link_to 'Back', presses_path %>
+<div class="container">
+  <% if current_user.role == "admin" %>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Editing press</div>
+    <div class="panel-body">
+
+
+      <%= render 'form' %>
+
+      <%= link_to 'Show', @press %> |
+      <%= link_to 'Back', presses_path %>
+  <%end%>
+
+  </div>
+  </div>
+</div>
+
+
+
+<script>
+    $( document ).ready(function() {
+        $("input[type=text]").addClass("form-control");
+        $("input[type=password]").addClass("form-control");
+        $("input[type=submit]").addClass("btn btn-success");
+        $("textarea").addClass("form-control");
+        $("select").css("padding","10px");
+    });
+</script>
+<script type="text/javascript " src="../javascripts/bootstrap.js"></script>
+<%end%>

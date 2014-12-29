@@ -1,19 +1,38 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+<div class="panel panel-primary">
+  <div class="panel-heading">Basında Gediz</div>
+  <div class="panel-body">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @press.title %>
-</p>
+    <p>
+      <strong>Title:</strong>
+      <%= @press.title %>
+    </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @press.content %>
-</p>
+    <p>
+      <strong>Content:</strong>
+      <%= @press.content %>
+    </p>
 
-<p>
-  <strong>Pressdate:</strong>
-  <%= @press.pressdate %>
-</p>
+    <p>
+      <strong>Pressdate:</strong>
+      <%= @press.pressdate %>
+    </p>
 
-<%= link_to 'Edit', edit_press_path(@press) %> |
-<%= link_to 'Back', presses_path %>
+    <%= link_to 'Edit', edit_press_path(@press) %> |
+    <%= link_to 'Back', presses_path %>
+
+  </div>
+</div>
+
+</div>
+<script>
+    $( document ).ready(function() {
+        $("input[type=text]").addClass("form-control");
+        $("input[type=password]").addClass("form-control");
+        $("input[type=submit]").addClass("btn btn-success");
+        $("textarea").addClass("form-control");
+    });
+</script>
+<script type="text/javascript " src="../javascripts/bootstrap.js"></script>
+

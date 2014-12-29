@@ -1,7 +1,15 @@
-<form class="form-signin" method="get"  action="/activities" >
+<%  if current_user.role != "admin" %>
+    <meta http-equiv="refresh" content="0;URL='/login'" />
+<% else %>
 
+<% if current_user.role == "admin" %>
 <%= render 'form' %>
 
 <%= link_to 'Göster', @activity %> |
 <%= link_to 'Geri', activities_path %>
 </form>
+
+    <%end%>
+          <%end%>
+
+

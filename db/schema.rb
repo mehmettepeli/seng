@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141210185538) do
+ActiveRecord::Schema.define(version: 20141227121618) do
 
   create_table "activities", force: true do |t|
     t.string   "title"
@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(version: 20141210185538) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "authors", force: true do |t|
@@ -28,6 +32,7 @@ ActiveRecord::Schema.define(version: 20141210185538) do
     t.string   "salt",             null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
   end
 
   add_index "authors", ["email"], name: "index_authors_on_email", unique: true
@@ -39,6 +44,16 @@ ActiveRecord::Schema.define(version: 20141210185538) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "comments", force: true do |t|
+    t.string   "author_name"
+    t.text     "body"
+    t.integer  "activity_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["activity_id"], name: "index_comments_on_activity_id"
 
   create_table "presses", force: true do |t|
     t.string   "title"

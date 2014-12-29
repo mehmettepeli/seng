@@ -20,8 +20,10 @@
         <td><%= author.email %></td>
 
         <td><%= link_to 'Göster', author %></td>
+        <% if @user && @user.role?(:admin) %>
         <td><%= link_to 'Düzenle', edit_author_path(author) %></td>
         <td><%= link_to 'Sil', author, method: :delete, data: { confirm: 'Silmek istediğinize emin misiniz?' } %></td>
+         <% end %>
       </tr>
     <% end %>
   </tbody>

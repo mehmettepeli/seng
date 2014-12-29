@@ -2,7 +2,10 @@ Project2::Application.routes.draw  do
 
 
 resources :authors
-  resources :activities
+  resources :activities do
+  resources :comments
+end
+
 resources   :carriers
 resources :author_sessions, only: [ :new, :create, :destroy ]
 resources :presses

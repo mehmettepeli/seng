@@ -1,19 +1,28 @@
+<div class="container">
+
 <p id="notice"><%= notice %></p>
+  <div class="panel panel-default">
+    <div class="panel-heading">Carrier</div>
+    <div class="panel-body">
+      <p>
+        <strong>Title:</strong>
+        <%= @carrier.title %>
+      </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @carrier.title %>
-</p>
+      <p>
+        <strong>Content:</strong>
+        <%= @carrier.content %>
+      </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @carrier.content %>
-</p>
+      <p>
+        <strong>Annocument date:</strong>
+        <%= @carrier.annocument_date %>
+      </p>
 
-<p>
-  <strong>Annocument date:</strong>
-  <%= @carrier.annocument_date %>
-</p>
+      <%= link_to 'Edit', edit_carrier_path(@carrier) %> |
+      <%= link_to 'Back', carriers_path %>
 
-<%= link_to 'Edit', edit_carrier_path(@carrier) %> |
-<%= link_to 'Back', carriers_path %>
+    </div>
+  </div>
+
+</div>

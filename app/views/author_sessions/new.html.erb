@@ -1,3 +1,5 @@
+
+
 <div class="container" style="box-shadow: 0px 0px 5px #dddddd; background-color: #ffffff; padding-top: 5px; padding-bottom: 5px; border-top:3px solid #cccccc; border-bottom:2px dotted #efefef;">
   <header>
     <div class="row">
@@ -19,6 +21,7 @@
           <a href="https://www.facebook.com/gedizbilgisayarkulubu"><img src="http://www.caglarergul.com/ruby/facebook.png" width="32" height="32"></a>
           <a href="https://twitter.com/gedizBytk"><img src="http://www.caglarergul.com/ruby/twitter.png" width="32" height="32"></a>
         </div>
+
         <div class="login-register" style="text-align: right; padding-right: 13px;">
           <a href="http://localhost:3000/login" class="btn btn-primary">Giriş Yap</a>
           <a href="http://localhost:3000/register" class="btn btn-success">Kayıt Ol</a>
@@ -47,6 +50,7 @@
             <li><a href="#">Kariyer</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#">İletişim</a></li>
+
           </ul>
 
         </div><!-- /.navbar-collapse -->
@@ -80,7 +84,15 @@
   </div>
 
   <footer>
+    <h6>
+      <% if logged_in? %>
+          <%= " #{current_user.email} olarak oturum açıldı." %>
+          <%= link_to "(Çıkış)", logout_path %>
+      <% else %>
+          <%= link_to "(Giriş Yap)", login_path %>
 
+      <% end %>
+    </h6>
   </footer>
 </div>
 <script>
@@ -91,3 +103,4 @@
     });
 </script>
 <script type="text/javascript " src="../javascripts/bootstrap.js"></script>
+

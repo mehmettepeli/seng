@@ -1,23 +1,52 @@
-<form class="form-signin" method="post" action="/activities">
-<p id="notice"><%= notice %></p>
+     <div class="container">
 
-<p>
-  <strong>Başlık:</strong>
-  <%= @activity.title %>
-</p>
 
-<p>
-  <strong>Tarih:</strong>
-  <%= @activity.adate %>
-</p>
-<% if logged_in? %>
+<form class="form-signin"  method="post" style="width:100%;" action="/activities">
+  <p id="notice"><%= notice %></p>
 
-<% end %>
-<p>
-  <strong>İçerik:</strong>
-  <%= @activity.content %>
-</p>
+  <p>
+    <strong>Başlık:</strong>
+    <%= @activity.title %>
+  </p>
 
-<%= link_to 'Düzenle', edit_activity_path(@activity) %> | &nbsp;
-<%= link_to 'Geri', activities_path %>
+  <p>
+    <strong>Tarih:</strong>
+    <%= @activity.adate %>
+  </p>
+  <% if logged_in? %>
+
+  <% end %>
+  <p>
+    <strong>İçerik:</strong>
+    <%= @activity.content %>
+  </p>
+  <%= link_to '« Geri', activities_path, class: 'btn btn-default' %>
+  <%= link_to 'Düzenle', edit_activity_path(@activity), class: 'btn btn-primary' %>  &nbsp;
+
 </form>
+     </div>
+<div class="container">
+
+
+
+  <div class="container">
+    <%= render partial: 'comments/form' %>
+  </div>
+  <div class="bg-success" style="padding:10px;">
+    <h3>Comments (<%= @activity.comments.size %>)</h3>
+  </div>
+  <table class="table table-striped">
+    <%= render partial: 'activities/comment', collection: @activity.comments %>
+  </table>
+
+
+</div>
+<script>
+    $( document ).ready(function() {
+        $("input[type=text]").addClass("form-control");
+        $("input[type=password]").addClass("form-control");
+        $("input[type=submit]").addClass("btn btn-success");
+        $("textarea").addClass("form-control");
+    });
+</script>
+<script type="text/javascript " src="../javascripts/bootstrap.js"></script>

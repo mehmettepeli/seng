@@ -1,6 +1,7 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
+  include ActivitiesHelper
   # GET /activities
   # GET /activities.json
   def index
@@ -10,6 +11,9 @@ class ActivitiesController < ApplicationController
   # GET /activities/1
   # GET /activities/1.json
   def show
+    @comment = Comment.new
+   # @comment.activity_id = @activity.id
+
   end
 
   # GET /activities/new

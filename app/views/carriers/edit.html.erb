@@ -1,6 +1,32 @@
-<h1>Editing carrier</h1>
+<%  if current_user.role != "admin" %>
+    <meta http-equiv="refresh" content="0;URL='/login'" />
+<% else %>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @carrier %> |
-<%= link_to 'Back', carriers_path %>
+    <div class="container">
+
+<% if current_user.role == "admin" %>
+      <div class="panel panel-primary">
+        <div class="panel-heading">Editing carrier</div>
+        <div class="panel-body">
+
+          <%= render 'form' %>
+
+          <%= link_to 'Show', @carrier %> |
+          <%= link_to 'Back', carriers_path %>
+  <%end%>
+        </div>
+      </div>
+      </div>
+
+<script>
+    $( document ).ready(function() {
+        $("input[type=text]").addClass("form-control");
+        $("input[type=password]").addClass("form-control");
+        $("input[type=submit]").addClass("btn btn-success");
+        $("textarea").addClass("form-control");
+        $("select").css("padding","10px");
+    });
+</script>
+<script type="text/javascript " src="../javascripts/bootstrap.js"></script>
+<%end%>

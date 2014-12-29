@@ -1,0 +1,21 @@
+<div style="width:100%;margin-left:-15px;padding:10px;" class="bg-warning">
+
+  <div class="container" style="width:600px;">
+    <h3>Post a Comment</h3>
+  <%= form_for [ @activity, @comment ] do |f| %>
+      <p>
+        <%= f.label :author_name, "Your Name"  %>
+        <%= f.text_field :author_name %>
+      </p>
+      <p>
+        <%= f.label :body %><br/>
+        <%= f.text_area :body %>
+      </p>
+      <p>
+        <%= f.submit 'Submit' %>
+      </p>
+  <% end %>
+  </div>
+</div>
+
+
